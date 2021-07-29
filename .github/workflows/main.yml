@@ -35,13 +35,13 @@ jobs:
 
     - name: Restore NuGet packages
       #working-directory: D:\a\sonar_dotnet\sonar_dotnet\WebAnalysis
-      run: nuget restore sonar-scanning-examples/sonarqube-scanner-msbuild/CSharpProject/SomeConsoleApplication.sln
+      run: nuget restore ./SomeConsoleApplication.sln
       
     - name: add test logger package 
-      run: dotnet add sonar-scanning-examples/sonarqube-scanner-msbuild/CSharpProject/SomeConsoleApplication.sln package NunitXml.TestLogger --version 3.0.107
+      run: dotnet add ./SomeConsoleApplication.sln package NunitXml.TestLogger --version 3.0.107
       
     - name: test
-      run: dotnet test sonar-scanning-examples/sonarqube-scanner-msbuild/CSharpProject/SomeConsoleApplication.sln --logger:"trx;LogFileName=testresult.xml
+      run: dotnet test ./SomeConsoleApplication.sln --logger:"trx;LogFileName=testresult.xml
     
    
    
